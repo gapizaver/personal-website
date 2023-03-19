@@ -1,0 +1,13 @@
+* {
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #e8e8e8;
+}
+
+h2, h3, p {
+    color: rgb(41, 41, 41);
+}
