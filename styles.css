@@ -25,7 +25,7 @@ h2 {
 }
 
 h3 {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 ul {
@@ -35,4 +35,29 @@ ul {
 
 ul li {
     text-align: left;
+}
+
+.social {
+	list-style: none;
+	font-size: 15px;
+	padding: 0;
+	margin: 0;
+}
+
+.social li {
+	padding-bottom: 5px;
+}
+
+.icon {
+    width: 30px;
+    height: auto;
+    margin-left: 20px;
+}
+
+#first-icon {
+    margin-left: 0;
+}
+
+.opis a {
+	display: contents;
 }
