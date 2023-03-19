@@ -27,3 +27,12 @@ h2 {
 h3 {
     margin-top: 10px;
 }
+
+ul {
+    text-align: left;
+    margin-left: calc(50% - 250px);
+}
+
+ul li {
+    text-align: left;
+}
