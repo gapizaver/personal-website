@@ -13,13 +13,76 @@
 
         <h2>User interface of the Formula student race car (season 2021/22)</h2>
         <p>In this brief article I will present the user interface I have developed for the 2022 race car of the Formula
-        student team in Ljubljana. The UI was completely redesigned this year. The goal was to use a color LCD and 
-        implement multiple screens for different use cases (racing, debugging the CAN bus, entertainment..) be changed from
-        user’s input on the steering wheel. Team’s former cars have 7/14 segment displays:</p>
+        student team in Ljubljana - <a target="_blank" href="https://www.superior-engineering.si/">Superior engineering</a>.
+        The UI was completely redesigned in the season 2021/22. The goal was to use a color LCD and 
+        implement multiple screens for different use cases (racing, debugging the CAN bus, entertainment..).
+        Showen screen can be changed from user’s input on the steering wheel. Team’s former cars had 7/14 segment displays:</p>
         <img src="imgs/TabalugaUI.png" alt="Tabaluga, season 2020/21">
+        <figcaption>Fig1: Race car Tabaluga, season 2020/21</figcaption>
 
-        <!--<h3>But first, what is Formula Student?</h3>-->
+        <h3>But first, what is Formula Student?</h3>
+        <p><a target="_blank" href="https://www.formulastudent.de/about/concept/">Formula student</a> is world's largest engineering competition.
+        Students build a single seat formula race car with
+        which they can compete against teams from all over the world. The competition is not won solely by the team
+        with the fastest car, but rather by the team with the best overall package of construction, performance, and
+        financial and sales planning.</p>
 
+        <h3>The user interface</h3>
+        <p>The user interface consists of the Steering wheel and the Dashboard.</p>
+        <img src="imgs/ZiggiUI.jpg" alt="Ziggi, season 2021/22">
+        <figcaption>Fig2: Race car Ziggi, season 2021/22</figcaption>
+
+        <h4>Steering wheel</h4>
+        <p>The only task of the Steering wheel is to read the input of the buttons and 2 absolute rotary encoders and transmit
+        the read data to the Dashboard via SPI. Inside the wheel is installed a custom printed custom printed circuit
+        board with a STM32F303CC MCU.</p>
+        <img src="imgs/Steering-wheel-PCB.png", alt="Steering wheel PCB">
+        <figcaption>Fig3: Render of the Steering wheel PCB</figcaption>
+
+        <h4>Dashboard</h4>
+        <p>The race car's dashboard[Fig2] consists of (from left to right) emergency shutdown button, 4 error LEDs, TFT LCD, 2 buttons.
+        Shutdown button and LEDs must be present according to the 
+        <a target="_blank" href="https://www.formulastudent.de/fileadmin/user_upload/all/2022/rules/FS-Rules_2022_v1.0.pdf">rulebook</a>. 
+        State of the buttons are transmitted
+        through CAN bus and can trigger the start of the high voltage system. Behind the dashboard is hidden a custom
+        printed circuit board with a STM32H743VI MCU, which controls all mentioned I/O devices:</p>
+        <img src="imgs/Dashboard-PCB.png", alt="Steering wheel PCB">
+        <figcaption>Fig4: Render of the Steering wheel PCB</figcaption>
+
+        <h4>LCD display</h4>
+        <p>High brightness, 480x800, TFT LCD is used with the <a target="_blank" href="https://www.adafruit.com/product/1590">Adafruit TFT driver board</a>. The Dashboard is controlling
+        the driver board via SPI interface. The official driver board library for Arduino was modified for the use with STM32.
+        I have designed and implemented the screens displayed on the LCD. Blue and yellow color combination was used to achive maximum contrast.</p>
+        
+        <h5>CAN screen</h5>
+        <img src="imgs/IMG_2023-03-14-18-11-37-300.jpg">
+        <figcaption>Fig5: CAN Screen</figcaption>
+        <p>All CAN messages are displayed. Other team members working on the car's electrical system can use this screen for debugging
+        purposes.</p>
+
+        <h5>Screen for racing</h5>
+        <img src="imgs/IMG_2023-03-14-18-11-48-854.jpg">
+        <figcaption>Fig6: Screen for racing</figcaption>
+        <p>Displayed when driving, this screen shows only the most important data, that concern the driver - temperatures
+        of the battery and powertrain (max T of both inverters and both motors) and state of charge of the battery. Our
+        drivers wanted no extra info on this screen, as they have practically little to no time to look at the display while
+        driving, due to the layout of the Formula student’s dynamic events. Also, i believe, GUI should be minimalistic and clear.</p>
+
+        <h5>Precharging screen</h5>
+        <img src="imgs/IMG_2023-03-14-18-11-56-161.jpg">
+        <figcaption>Fig7: Precharging screen</figcaption>
+        <p>Precharge screen is used for observing precharging of the battery.</p>
+
+        <h5>Pong screen</h5>
+        <img src="imgs/IMG_2023-03-14-18-11-56-161.jpg">
+        <figcaption>Fig8: Pong screen</figcaption>
+        <p>The Pong game clone for entertainment purposes.</p>
+
+        <h3>Closure</h3>
+        <p>Thank you for reading. If you want to learn more you can check out my 
+        <a target="_blank" href="storage/Diploma.pdf">Bachelor's thesis</a> (in Slovenian language).</p>
+        <img src="imgs/293281013_2532641066872940_2488017159102365498_n.jpg" alt="Ziggi rolout">
+        <figcaption>Fig9: The team with the race car, season 2021/22</figcaption>
 
         <p><a href="../index.html">Back to the main page</a>&emsp;&emsp;<a href="#">Back to the top</a></p>
     </div>
