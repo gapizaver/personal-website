@@ -19,6 +19,12 @@ h2, h3, p {
     padding: 10px 70px;
 }
 
+img {
+    width: 500px;
+    height: auto;
+    margin: 20px 0 20px 250px
+}
+
 #article-container p:first-of-type {
     margin-bottom: 50px;
 }
