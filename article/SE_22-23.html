@@ -11,7 +11,32 @@
     <div id="article-container">
         <p><a href="../index.html">Back to the main page</a></p>
 
-        <h2>User interface of the Formula student race car (season 2022/23)</h2>
+        <h2>User interface of the Formula student race car (season 2022/23) <i>in progress</i></h2>
+        <p></p>
+        
+        <h2>Goals</h2>
+        <p>The main goal for the season 2022/23 was to abandon the use of the Adafruit LCD driver board used in 
+        <a href="SE_21-23.html">last season</a>. The driver board had 
+        some limitations - only 768KB display RAM and the text could only be upscaled 4x at best.
+        The plan was to use the LTDC display controller in the STM32H7 microcontroller. Custom hardware solution
+        had to be implemented. </p>
+
+        <h2>PCB design</h2>
+        <p>I designed the PCB in KiCAD.</p>
+
+        <img src="imgs/Dashboard23-PCB-back.png" alt="Dashboard PCB render - front back">
+        <figcaption>Fig1: Dashboard PCB render - back side</figcaption>
+        <p>On the back side of the PCB is located external SDRAM (8MB  -more than enough for storing 2 RGB888
+         screen buffers), and a 40pin FPC connector for the LCD.</p> 
+
+        <img src="imgs/Dashboard23-PCB-front.png" alt="Dashboard PCB render - front side">
+        <figcaption>Fig2: Dashboard PCB render - front side</figcaption>
+        <p>On the front side of the PCB is also a power supply for the LCD backlight, other voltage regulators
+        (12V->5V & 5V->3.3V), CAN transceiver, SWD connector and the STM32H734 microcontroller.
+        </p>
+
+        <h2>Embedded software development</h2>
+        <p><i>in progress</i></p>
 
         <p><a href="../index.html">Back to the main page</a>&emsp;&emsp;<a href="#">Back to the top</a></p>
     </div>
