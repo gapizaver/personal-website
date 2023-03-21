@@ -30,6 +30,9 @@ h3 {
 
 ul {
     text-align: left;
+}
+
+body > ul {
     margin-left: calc(50% - 250px);
 }
 
